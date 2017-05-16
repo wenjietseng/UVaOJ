@@ -1,4 +1,7 @@
-/*  591 Box of Bricks */
+/*  591 Box of Bricks
+    This problem got Runtime Error all the time.
+    It just because I did put "return 0;" in main. = =a
+*/
 #include <stdio.h>
 int main() 
 {
