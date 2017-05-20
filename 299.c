@@ -1,6 +1,13 @@
 /*
     uva 299 Train swapping, I think it is a buble sort.
     Just record the counts of swap.
+    
+    Pseudo code of Bubble sort
+    BubbleSort(A)
+    1.for i = 1 to A.length - 1
+    2.    for j = A.length downto i + 1
+    3.        if A[j] < A[j - 1]
+    4.            swap(A[j], A[j - 1])
 */
 #include <stdio.h>
 
