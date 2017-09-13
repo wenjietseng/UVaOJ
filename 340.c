@@ -1,4 +1,3 @@
-/* One does not have to use 4 array */
 #include <stdio.h>
 #define MAXN 1000 + 10
 
