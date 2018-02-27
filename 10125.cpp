@@ -1,36 +1,50 @@
 // Use brutral force
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <climits>
 
-#include <stdio.h>
+using namespace std;
+int find(std::vector<int>& set)
+{
+	for (int d = set.size() - 1; d >= 0; --d)
+		for (int a = 0; a < set.size(); ++a)
+			for (int b = a + 1; b < set.size(); ++b)
+				for (int c = b + 1; c < set.size(); ++c)
+					if ((set[d] == set[a] + set[b] + set[c]) &&
+							a != d && b != d && c != d)
+						return set[d];
+	return INT_MAX;
+}
 
 int main()
 {
+	/*
+#ifndef ONLINE_JUDGE
+	freopen("10125.in", "r", stdin);
+#endif
+*/
+
 	int n;
-	while (scanf("%d", &n) && n)
+	while (std::cin >> n)
 	{
-		int i, j, k, l;
-		long long int arr[n];
-		for (i = 0; i < n; i++)
+		if (n == 0) break;
+
+		std::vector<int> set(n);
+		for (int i = 0; i < n; i++)
+			std::cin >> set[i];
+
+		sort(set.begin(), set.end());
+
+		int d = find(set);
+		if (d == INT_MAX)
 		{
-			scanf("%lld", &arr[i]);
+			std::cout << "no solution\n";
 		}
-		for (i = n - 1; i >= 0; i--)
+		else
 		{
-			for (j = n - 2; j >= 0; j--)
-			{
-				for (k = n - 3; k >= 0; k--)
-				{
-					for (l = n - 4; l >= 0; l--)
-					{
-						if (arr[i] - arr[j] - arr[k] - arr[l] == 0)
-						{
-							printf("%lld\n", arr[i]);
-							break;
-						}
-					}
-				}
-			}	
+			std::cout << d << "\n";
 		}
-		printf("no solution\n");
 	}
-	
+	return 0;
 }

@@ -14,7 +14,7 @@ int main()
 	dp[0][0][0] = 1;
 	for (l = 1; l <= 26; l++)
 	{
-		for (e = l; e <= 26; ++e)
+		for (e = 1; e <= 26; ++e)
 		{
 			for (s = 0; s <= 351; ++s)
 			{ 
@@ -29,7 +29,7 @@ int main()
 	memset(sum, 0, sizeof(sum));
 	for (l = 1; l <= 26; l++)
 	{
-		for (e = l; e <= 26; ++e)
+		for (e = 1; e <= 26; ++e)
 		{
 			for (s = 0; s <= 351; ++s)
 			{
